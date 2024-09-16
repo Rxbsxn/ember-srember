@@ -18,6 +18,9 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    contentSecurityPolicy: {
+      'script-src': ["'self'", 'https://ember-srember-react.netlify.app/'],
+    },
   };
 
   if (environment === 'development') {

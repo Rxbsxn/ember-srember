@@ -1,7 +1,23 @@
 {{page-title "EmberSrember"}}
+<div>
+  <h1>Hello World From Ember</h1>
+  <MyComponent @props={{hash message="Hello from Ember! (elo elo elo)" mojaLiczba=this.mojaLiczba onEvent=this.handleReactEvent}} @onReactRef={{this.setReactRef}}/>
 
-{{outlet}}
+  <p>
+    <h1>Ember application</h1>
+  <p>
+    Actions from Ember
+    <button {{on "click" (fn this.callReactMethod 10)}}>Update React counter by <strong>10</strong></button>
+    <button {{on "click" (fn this.callReactMethod 5)}}>Update React counter by <strong>5</strong></button>
+  </p>
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+  <p>
+
+    Counter from React: {{this.reactValue}}
+  </p>
+  <p>
+    <button type="button" {{on "click" this.increment}}>+1</button>
+    {{this.mojaLiczba}}
+  </p>
+  </p>
+</div>
